@@ -1,0 +1,13 @@
+{
+  "name": "Rob's Site",
+  "short_name": "Testing Manifest",
+  "description": "Learn how to create and share something or other.",
+  "start_url": "/",
+  "background_color": "#333",
+  "theme_color": "#777",
+  "icons": [{
+    "src": "layout/images/logo.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }]
+}
