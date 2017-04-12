@@ -6,27 +6,23 @@
 <link rel="manifest" href="manifest.json" />
 <body>
   <p>Wot R U Doig</p>
-</body>
 <script>
 if ('serviceWorker' in navigation) {
   navigator.serviceWorker.register(
     'sw.js',
-    {scope: '/*'}
+    {scope: '*'}
     ).then(success, failure);
 }
   
 function requestNotificationPermission() {
   if (Notification.requestPermission) {
       Notification.requestPermission(function(result) {
-          console.log("Notificationission : ", result);
+          console.log("Notificationisson : ", result);
       });
   } else {
-      console.log("Notificationssupported by this browser.");
+      console.log("Notifications supported by this browser.");
   }
 }
-</script>
-  
-  
+</script>  
+</body>
 </html>
-  
-  
