@@ -7,4 +7,26 @@
 <body>
   <p>Wot R U Doig</p>
 </body>
+<script>
+if ('serviceWorker' in navigation) {
+  navigator.serviceWorker.register(
+    'sw.js',
+    {scope: '/*'}
+    ).then(success, failure);
+}
+  
+function requestNotificationPermission() {
+  if (Notification.requestPermission) {
+      Notification.requestPermission(function(result) {
+          console.log("Notificationission : ", result);
+      });
+  } else {
+      console.log("Notificationssupported by this browser.");
+  }
+}
+</script>
+  
+  
 </html>
+  
+  
