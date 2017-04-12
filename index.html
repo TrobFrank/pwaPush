@@ -7,21 +7,8 @@
 <body>
   <p>Wot R U Doig</p>
 <script>
-if ('serviceWorker' in navigation) {
-  navigator.serviceWorker.register(
-    'sw.js',
-    {scope: '*'}
-    ).then(success, failure);
-}
-  
-function requestNotificationPermission() {
-  if (Notification.requestPermission) {
-      Notification.requestPermission(function(result) {
-          console.log("Notificationisson : ", result);
-      });
-  } else {
-      console.log("Notifications supported by this browser.");
-  }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
 }
 </script>  
 </body>
