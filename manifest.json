@@ -1,8 +1,9 @@
 {
-  "name": "Testing",
+  "name": "Testing Manifest",
   "short_name": "Testing Manifest",
   "description": "Learn how to create and share something or other.",
   "start_url": "index.html",
+  "display": "standalone",
   "background_color": "#333",
   "theme_color": "#777",
   "icons": [{
