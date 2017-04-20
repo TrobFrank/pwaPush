@@ -21,8 +21,8 @@ html,body {
   width:100vw;
 }
 
-#subscribeBtn {
-  height:15px;
+#subscribeBtn:disabled {
+  height:20px;
   width:50px;
   background:lightgray;
   border-radius:5px;
@@ -33,6 +33,20 @@ html,body {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+#subscribeBtn:enabled {
+  height:20px;
+  width:50px;
+  background:#fff;
+  border-radius:5px;
+  border:2px solid gray;
+  cursor:pointer;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+
 
 #subscribeBtn:after {
   display:block;
@@ -61,7 +75,7 @@ html,body {
   position:relative;
   top:-10px;
   left:66%;
-  border:2px solid #333;  
+  border:2px solid #3092d1;  
 }
 
 p,a,ul,li,h1,h2,h3,h4 {
