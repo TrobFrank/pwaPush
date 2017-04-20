@@ -18,7 +18,7 @@ function subscribe() {
     reg.pushManager.subscribe({userVisibilityOnly: true})
       .then(function(sub){
         console.log('Now we update the server with our subscription object', sub);
-        updateServerWithSubscription(sub);
+        updateServerWithSubscription(sub); //identifying specific user to server
         }).catch(function(error){
           console.log('Unable to subscribe this user', error);
       });
@@ -26,7 +26,16 @@ function subscribe() {
 }
 
 function unsubscribe() {
-  
+  navigator.serviceWorker.getRegistration.then(function(reg) {
+    reg.pushManager.getSubscription().then(function(sub){
+      if (sub) {
+        sub.unsubscribe();
+        console.log('Updating our server with an unsubscription');
+      }
+    });
+  }).catch(function(error){
+      console.log('Unable to subscribe this user', error);
+  });
 }
 
 var subscribeBtn = document.getElementById("subscribeBtn");
