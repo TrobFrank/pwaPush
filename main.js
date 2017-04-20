@@ -38,15 +38,21 @@ function unsubscribe() {
   });
 }
 
-var subscribeBtn = document.getElementById("subscribeBtn");
+///////////////
 
-subscribeBtn.addEventListener(click, function(){
- 
-    if (subscribeBtn.classList.contains("subscribed")) {
+var subscribeStatus = document.getElementById("subscribeStatus");
+subscribeStatus.innerHTML = "<p>Not Subscribed.</p>";
+
+var subscribeBtn = document.getElementById("subscribeBtn");
+subscribeBtn.addEventListener("click", subscribe);
+function subscribe(){
+  if (subscribeBtn.classList.contains("subscribed")) {
+    subscribeStatus.innerHTML = "<p>Not Subscribed.</p>";
         subscribeBtn.classList.remove("subscribed");
         //unsubscribe();  
      } else {
     subscribeBtn.classList.add("subscribed");
+    subscribeStatus.innerHTML = "<p>Subscribed!</p>";   
        //subscribe();
     }
- }); //subscribe UI
+ }; //subscribe UI
