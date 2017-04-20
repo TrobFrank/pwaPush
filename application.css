@@ -1,11 +1,14 @@
 body, html {
   background-color:#3092d1;
-  color:#fff828;
+  color:#fff;
   margin:0;
   padding:0;
 }
 
 p,a,ul,li,h1,h2,h3,h4 {
   font-family:'Open Sans', san serif;
-  color:#fff828;
+  color:#fff;
+  font-size:36px;
+  text-align:center;
+  margin-top:33vh;
 }
