@@ -2,7 +2,7 @@
     console.log("Will the service worker register?");
     navigator.serviceWorker.register('sw.js')
       .then(function(reg){
-        reg.pushManager.getSubScription()
+        reg.pushManager.getSubscription()
           .then(function(sub) {
             console.log('Subscription Info:', sub);
           });
