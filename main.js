@@ -44,7 +44,7 @@ function unsubscribe() {
 
 
 
-var subscribeBtn = document.getElementById("subscribeBtn");
+var subscribeBtn = document.querySelector("#subscribeBtn");
 subscribeBtn.addEventListener("click", subscribeUI);
 function subscribeUI(){
   if (subscribeBtn.classList.contains("subscribed")) {
