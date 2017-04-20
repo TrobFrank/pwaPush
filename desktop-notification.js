@@ -1,5 +1,6 @@
 Notification.requestPermission(); //asks users to allow or deny notifications
 
+/*
 var notification = new Notification("Title Value", {
   body:"This is the body value",
   icon:"logo.png",
@@ -10,3 +11,4 @@ var notification = new Notification("Title Value", {
 notification.onclick = function(){
  location.href = "https://www.legendwebworks.com/support/";
 }
+*/
