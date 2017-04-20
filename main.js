@@ -40,7 +40,8 @@ function unsubscribe() {
 
 ///////////////
 
-document.getElementById("subscribeStatus").innerHTML = "<p>Not Subscribed.</p>";
+var subscribeStatus = document.getElementById("subscribeStatus");
+subscribeStatus.innerHTML = "Not Subscribed.";
 
 var subscribeBtn = document.getElementById("subscribeBtn");
 subscribeBtn.addEventListener("click", subscribeUI);
@@ -51,7 +52,7 @@ function subscribeUI(){
         //unsubscribe();  
      } else {
     subscribeBtn.classList.add("subscribed");
-    document.getElementById("subscribeStatus").innerHTML = "<p>Not Subscribed.</p>";
+    subscribeStatus.innerHTML = "Not Subscribed.";
        //subscribe();
     }
  }; //subscribe UI
