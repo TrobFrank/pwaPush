@@ -14,9 +14,10 @@ self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title = 'Push Lab'; 
+//in php, will need to build switch with appropriate data for invoices, service requests  
+  const title = '$title'; 
   const options = {
-    body: 'Yay it works.',
+    body: '$summary',
     icon: 'logo.png',
     badge: 'logo.png'
   };
