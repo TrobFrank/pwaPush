@@ -40,19 +40,18 @@ function unsubscribe() {
 
 ///////////////
 
-var subscribeStatus = document.getElementById("subscribeStatus");
-subscribeStatus.innerHTML = "<p>Not Subscribed.</p>";
+document.getElementById("subscribeStatus").innerHTML = "<p>Not Subscribed.</p>";
 
 var subscribeBtn = document.getElementById("subscribeBtn");
-subscribeBtn.addEventListener("click", subscribe);
-function subscribe(){
+subscribeBtn.addEventListener("click", subscribeUI);
+function subscribeUI(){
   if (subscribeBtn.classList.contains("subscribed")) {
     subscribeStatus.innerHTML = "<p>Not Subscribed.</p>";
         subscribeBtn.classList.remove("subscribed");
         //unsubscribe();  
      } else {
     subscribeBtn.classList.add("subscribed");
-    subscribeStatus.innerHTML = "<p>Subscribed!</p>";   
+    document.getElementById("subscribeStatus").innerHTML = "<p>Not Subscribed.</p>";
        //subscribe();
     }
  }; //subscribe UI
