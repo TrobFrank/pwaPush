@@ -1,8 +1,67 @@
-body, html {
-  background-color:#3092d1;
-  color:#fff;
+html,body {
   margin:0;
   padding:0;
+  background-color:#3092d1;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height:100vh;
+  width:100vw;
+}
+
+#subscribeBtn {
+  height:15px;
+  width:50px;
+  background:lightgray;
+  border-radius:5px;
+  border:2px solid gray;
+  cursor:pointer;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#subscribeBtn:after {
+  display:block;
+  content:"";
+  height:30px;
+  width:30px;
+  border-radius:50%;
+  background:black;
+  position:relative;
+  top:-10px;
+  left:-33%;
+  border:2px solid #333;
+   -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear; 
+}
+
+#subscribeBtn.subscribed:after {
+  display:block;
+  content:"";
+  height:30px;
+  width:30px;
+  border-radius:50%;
+  background:black;
+  position:relative;
+  top:-10px;
+  left:66%;
+  border:2px solid #333;  
 }
 
 p,a,ul,li,h1,h2,h3,h4 {
@@ -11,4 +70,9 @@ p,a,ul,li,h1,h2,h3,h4 {
   font-size:36px;
   text-align:center;
   margin-top:33vh;
+}
+
+#subscribeStatus p {
+  color:#fff;
+  font-size:24px; 
 }
