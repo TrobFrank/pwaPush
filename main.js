@@ -59,6 +59,18 @@ function unsubscribe() {
   });
 }
 
+ 
+ 
+////////////
+ 
+ const subscriptionObject = {
+  endpoint: pushSubscription.endpoint,
+  keys: {
+    p256dh: pushSubscription.getKeys('p256dh'),
+    auth: pushSubscription.getKeys('auth')
+  }
+}; 
+ 
 /////////////
 
 subscribeBtn.onclick = function() {
