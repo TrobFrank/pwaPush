@@ -22,8 +22,8 @@ function subscribe() {
     reg.pushManager.subscribe({userVisibilityOnly: true})
       .then(function(sub){
         console.log('Now we update the server with our subscription object', sub);
-        subscribeStatus.innerHTML = "Not Subscribed.";
         updateServerWithSubscription(sub); //identifying specific user to server
+        subscribeStatus.innerHTML = "Not Subscribed.";
         }).catch(function(error){
           console.log('Unable to subscribe this user', error);
       });
@@ -34,11 +34,12 @@ function unsubscribe() {
   navigator.serviceWorker.getRegistration.then(function(reg) {
     reg.pushManager.getSubscription().then(function(sub){
       if (sub) {
-        sub.unsubscribe();
+        sub.unsubscribe().then(function(successful) {
         subscribeStatus.innerHTML = "Not Subscribed.";
         console.log('Updating our server with an unsubscription');
-      }
-    });
+        };
+      }//if sub
+    }); //get sub
   }).catch(function(error){
       console.log('Unable to subscribe this user', error);
   });
@@ -50,11 +51,11 @@ subscribeBtn.onclick = function() {
   if (subscribeBtn.classList.contains("subscribed")) {
     subscribeStatus.innerHTML = "Not Subscribed.";
         subscribeBtn.classList.remove("subscribed");
-        //unsubscribe();  
+        unsubscribe();  
      } else {
     subscribeBtn.classList.add("subscribed");
     subscribeStatus.innerHTML = "Subscribed!";
-       //subscribe();
+       subscribe();
     }
 };
  
