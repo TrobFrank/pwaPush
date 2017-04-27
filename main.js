@@ -1,4 +1,6 @@
-  if ('serviceWorker' in navigator) {
+window.onload = function() {
+
+if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
     navigator.serviceWorker.register('sw.js')
       .then(function(reg){
@@ -43,7 +45,8 @@ function unsubscribe() {
 /////////////
 
 
-document.getElementById("subscribeBtn").onclick = function() {
+var subscribeBtn = document.getElementById("subscribeBtn");
+subscribeBtn.onclick = function() {
   if (subscribeBtn.classList.contains("subscribed")) {
     document.getElementById("subscribeStatus").innerHTML = "Not Subscribed.";
         subscribeBtn.classList.remove("subscribed");
@@ -54,4 +57,5 @@ document.getElementById("subscribeBtn").onclick = function() {
        //subscribe();
     }
 };
-  
+ 
+}; //window.onload
