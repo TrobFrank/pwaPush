@@ -24,25 +24,19 @@ if ('serviceWorker' in navigator) {
 function subscribe() {
   navigator.serviceWorker.getRegistration().then(function(reg){
     reg.pushManager.subscribe({userVisibilityOnly: true})
-      .then(function(sub){
-        console.log('Now we update the server with our subscription object', sub);
-        updateServerWithSubscription(sub); //identifying specific user to server
-        subscribeStatus.innerHTML = "Not Subscribed.";
-        }).catch(function(error){
-          console.log('Unable to subscribe this user', error);
-      });
+           .then(function(sub){
+             console.log('Now we update the server with our subscription object', sub);
+             updateServerWithSubscription(sub); //identifying specific user to server
+             }).catch(function(error){
+               console.log('Unable to subscribe this user', error);
+           });
   });
 }
 
 function unsubscribe() {
   navigator.serviceWorker.getRegistration.then(function(reg) {
     reg.pushManager.getSubscription().then(function(sub){
-      if (sub) {
-        sub.unsubscribe().then(function(successful) {
-        subscribeStatus.innerHTML = "Not Subscribed.";
-        console.log('Updating our server with an unsubscription');
-        });
-      }//if sub
+        sub.unsubscribe();
     }); //get sub
   }).catch(function(error){
       console.log('Unable to subscribe this user', error);
