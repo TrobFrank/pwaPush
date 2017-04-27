@@ -44,9 +44,8 @@ function unsubscribe() {
 
 
 
-var subscribeBtn = document.querySelector("#subscribeBtn");
-subscribeBtn.addEventListener("click", subscribeUI);
-function subscribeUI(){
+var subscribeBtn = document.getElementById("subscribeBtn");
+subscribeBtn.onclick = function() {
   if (subscribeBtn.classList.contains("subscribed")) {
     document.getElementById("subscribeStatus").innerHTML = "Not Subscribed.";
         subscribeBtn.classList.remove("subscribed");
@@ -56,4 +55,5 @@ function subscribeUI(){
     document.getElementById("subscribeStatus").innerHTML = "Subscribed!";
        //subscribe();
     }
- }; //subscribe UI
+};
+  
