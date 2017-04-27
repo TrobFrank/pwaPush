@@ -43,9 +43,7 @@ function unsubscribe() {
 /////////////
 
 
-
-var subscribeBtn = document.getElementById("subscribeBtn");
-subscribeBtn.onclick = function() {
+document.getElementById("subscribeBtn").onclick = function() {
   if (subscribeBtn.classList.contains("subscribed")) {
     document.getElementById("subscribeStatus").innerHTML = "Not Subscribed.";
         subscribeBtn.classList.remove("subscribed");
