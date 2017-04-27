@@ -12,5 +12,26 @@
   <div><p id="subscribeStatus"></p></div>
   <button id="subscribeBtn" enabled></button>  
   <p><img src="logo.png" alt="logo"/><br/>Hello World</p>
+
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+<!-- Leave out Storage -->
+<!-- <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-storage.js"></script> -->
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAROv776---KJi7LjQ25aleM0ec_Nxmk3w",
+    authDomain: "push-notifications-1ee0d.firebaseapp.com",
+    databaseURL: "https://push-notifications-1ee0d.firebaseio.com",
+    projectId: "push-notifications-1ee0d",
+    storageBucket: "push-notifications-1ee0d.appspot.com",
+    messagingSenderId: "210323642864"
+  };
+  firebase.initializeApp(config);
+</script>  
 </body>
 </html>
