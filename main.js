@@ -37,7 +37,7 @@ function unsubscribe() {
         sub.unsubscribe().then(function(successful) {
         subscribeStatus.innerHTML = "Not Subscribed.";
         console.log('Updating our server with an unsubscription');
-        };
+        });
       }//if sub
     }); //get sub
   }).catch(function(error){
