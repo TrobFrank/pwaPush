@@ -1,15 +1,19 @@
 window.onload = function() {
 var subscribeStatus = document.getElementById("subscribeStatus");
 var subscribeBtn = document.getElementById("subscribeBtn");
-    
+
+ //registering service worker, checking for subscription
 if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
     navigator.serviceWorker.register('sw.js')
       .then(function(reg){
         reg.pushManager.getSubscription()
           .then(function(sub) {
-            console.log('Subscription Info:', sub);
-          });
+            if (sub) {
+                console.log('Subscription Info:', sub);
+                return sub;
+            }; //if sub
+          }); //get sub
         console.log("Yes, it did.");
       }).catch(function(err) {
         console.log("No it didn't. This happened: ", err)
